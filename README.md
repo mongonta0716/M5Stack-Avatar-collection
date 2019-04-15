@@ -36,6 +36,11 @@ https://github.com/m5stack/M5Stack/tree/master/tools
 
 https://github.com/m5stack/M5Stack/blob/master/src/utility/In_eSPI.h
 
+自分で色を作成したい場合はM5.Lcd.color565(int r, int g, int b)を使うと変換できます。
+
+例、肌色
+const unsigned int HADAIRO = M5.Lcd.color565(255,233,218);
+
 # Requirement
 
 コンパイルする場合は、以下のライブラリが必要です。
