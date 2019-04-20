@@ -59,6 +59,7 @@ sketchbookフォルダにソースがあります。（画像データは入れ�
 
 ### PNGデータをCのソースへ変換する。
 下記リンクにあるpng2code.pyを使用するとCのコードに変換できます。（要Pythonの実行環境）
+https://github.com/mongonta0716/M5Stack_Test_tools/tree/master/tools
 
 ### 目と口
 目はeye.cppとeye.h,口の変更はavatar.cppとavatar.hの変更をします。
