@@ -7,6 +7,14 @@ M5Stack-avatarのオリジナルはmeganetaaanさんの[m5stack-avatar](https://
 
 背景にJPGファイルを使用したかったのでm5stack-avatarの古いバージョンを利用しています。
 
+# Contents
+## Avatar_fugu2
+![image](https://github.com/mongonta0716/M5Stack-Avatar-collection/blob/master/build/jpg/Avatar_fugu2.jpg)
+## Avatar_penguin
+![image](https://github.com/mongonta0716/M5Stack-Avatar-collection/blob/master/build/jpg/Avatar_penguin.jpg)
+## AvatarPngGirl1
+![image](https://github.com/mongonta0716/M5Stack-Avatar-collection/blob/master/build/jpg/AvatarPngGirl1.jpg)
+
 # 使い方(Usage)
 
 buildフォルダにあるbinファイル,jpgフォルダ,jsonフォルダをmicroSDカードにコピーします。
@@ -16,21 +24,6 @@ LovyanLauncherの詳しい使い方は下記のブログを参照してくださ
 [M5Stack LovyanLauncherの使い方｜ラズパイ好きの日記](https://raspberrypi.mongonta.com/howto-use-m5stack-lovyanlauncher/)
 
 # カスタマイズのポイント
-sketchbookフォルダにソースや元画像が入っています。
-## 背景
-背景はavatar_???_bg.cにデータがあります。まずはavatar_???_bg.jpgを作成します。
-* サイズは320×240
-* MicroSoftペイントは保存すればそのまま使えます。イラストレーターの場合はプログレッシブオフ、マット無しでWeb用に保存をします。
-* 背景を作成する場合は目が移動する部分のマージンを取る必要があるので注意してください。(bgColorと同色)
-
-### JPGデータをCのソースへ変換する
-下記リンクにあるbin2code.pyを使用するとcのコードに変換できます。（要Pythonの実行環境）
-https://github.com/m5stack/M5Stack/tree/master/tools
-## 目と口
-目と口の変更はavatar.cppとavatar.hの変更をします。変更は下記のCommitが参考になるかと思います。
-
-[Change from Fugu to UMA](https://github.com/mongonta0716/M5Stack-Avatar-uma/commit/8da0441fec0a3a6d0a4a4a33f9aa40b7c8aa51c7?diff=unified)
-
 ## 色について
 下記のIn_eSPI.hの500行目ぐらいに定義があります。
 
@@ -41,9 +34,39 @@ https://github.com/m5stack/M5Stack/blob/master/src/utility/In_eSPI.h
 例、肌色
 const unsigned int HADAIRO = M5.Lcd.color565(255,233,218);
 
+## Avatar_fugu2,Avatar_penguin
+sketchbookフォルダにソースや元画像が入っています。
+### 背景
+背景はavatar_???_bg.cにデータがあります。まずはavatar_???_bg.jpgを作成します。
+* サイズは320×240
+* MicroSoftペイントは保存すればそのまま使えます。イラストレーターの場合はプログレッシブオフ、マット無しでWeb用に保存をします。
+* 背景を作成する場合は目が移動する部分のマージンを取る必要があるので注意してください。(bgColorと同色)
+
+#### JPGデータをCのソースへ変換する
+下記リンクにあるbin2code.pyを使用するとcのコードに変換できます。（要Pythonの実行環境）
+https://github.com/m5stack/M5Stack/tree/master/tools
+
+### 目と口
+目と口の変更はavatar.cppとavatar.hの変更をします。変更は下記のCommitが参考になるかと思います。
+
+[Change from Fugu to UMA](https://github.com/mongonta0716/M5Stack-Avatar-uma/commit/8da0441fec0a3a6d0a4a4a33f9aa40b7c8aa51c7?diff=unified)
+
+
+## AvatarPngGirl1
+sketchbookフォルダにソースがあります。（画像データは入れていません。）
+画像は[コミPo!](https://www.comipo.com/)で作成しました。
+背景はJPGで320×240でトリミング、目の部分はPNGで５パターン用意して160x44にトリミングします。
+
+### PNGデータをCのソースへ変換する。
+下記リンクにあるpng2code.pyを使用するとCのコードに変換できます。（要Pythonの実行環境）
+
+### 目と口
+目はeye.cppとeye.h,口の変更はavatar.cppとavatar.hの変更をします。
+
 # Requirement
 
 コンパイルする場合は、以下のライブラリが必要です。
+* [M5Stack](https://github.com/m5stack/M5Stack)
 * [M5Stack-SD-Updater](https://github.com/tobozo/M5Stack-SD-Updater)
 
 # Licence
