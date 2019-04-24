@@ -42,9 +42,9 @@ void startAvatar()
                     "blink",   /* Name of the task */
                     2048,      /* Stack size in words */
                     NULL,      /* Task input parameter */
-                    0,         /* Priority of the task */
+                    2,         /* Priority of the task */
                     NULL,      /* Task handle. */
-                    0);        /* Core where the task should run */  
+                    1);        /* Core where the task should run */  
 }
 
 
